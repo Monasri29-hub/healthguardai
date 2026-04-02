@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="style.css">
+
+<div class="container">
+<h2>Health Prediction</h2>
+
+<input id="age" placeholder="Age">
+<input id="bmi" placeholder="BMI">
+<input id="glucose" placeholder="Glucose">
+<input id="bp" placeholder="BP">
+
+<button onclick="predict()">Analyze</button>
+
+<div id="result"></div>
+
+<button onclick="goChat()">Chatbot</button>
+</div>
+
+<script>
+async function predict(){
+    let r = await fetch("http://127.0.0.1:5000/predict",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({
+            email: localStorage.getItem("email"),
+            age: age.value,
+            bmi: bmi.value,
+            glucose: glucose.value,
+            bp: bp.value
+        })
+    });
+
+    let d = await r.json();
+
+    result.innerHTML = `
+    Result: ${d.result} <br>
+    Risk: ${d.score}% <br>
+    ${d.emergency ? "🚨 Emergency Alert!" : ""}
+    `;
+}
+
+function goChat(){
+    window.location="chatbot.html";
+}
+</script>

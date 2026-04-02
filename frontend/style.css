@@ -1,0 +1,92 @@
+/* ---------- BODY ---------- */
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- CONTAINER ---------- */
+.container {
+    background: rgba(30, 41, 59, 0.95);
+    padding: 35px;
+    width: 340px;
+    margin: 80px auto;
+    border-radius: 18px;
+    box-shadow: 0 0 25px rgba(0, 245, 212, 0.5);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* ---------- TITLE ---------- */
+.container h2 {
+    color: #00f5d4;
+    margin-bottom: 20px;
+}
+
+/* ---------- INPUT ---------- */
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px auto;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    display: block;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Input focus glow */
+input:focus {
+    box-shadow: 0 0 10px #00f5d4;
+}
+
+/* ---------- BUTTON ---------- */
+button {
+    background: linear-gradient(45deg, #00f5d4, #00c9a7);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Hover effect */
+button:hover {
+    background: linear-gradient(45deg, #00c9a7, #00f5d4);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00f5d4;
+}
+
+/* ---------- RESULT ---------- */
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #00f5d4;
+}
+
+/* ---------- LINK ---------- */
+a {
+    color: #00f5d4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- ANIMATION ---------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

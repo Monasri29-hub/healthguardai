@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Welcome to Health AI</h2>
+
+    <!-- AUTH BUTTONS -->
+    <button onclick="go('login.html')">Login</button>
+    <button onclick="go('signup.html')">Signup</button>
+
+    <hr style="margin:20px 0; border:0.5px solid #555;">
+
+    <!-- MAIN FEATURES -->
+    <button onclick="go('dashboard.html')">Go to Dashboard</button>
+    <button onclick="go('chatbot.html')">Open Chatbot</button>
+
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script>
+function go(page){
+    window.location = page;
+}
+
+function logout(){
+    localStorage.removeItem("email");
+    window.location = "login.html";
+}
+</script>
+
+</body>
+</html>
